@@ -20,7 +20,7 @@ const SingleGame = () => {
             <h2>{game.name}</h2>
             <img src={game.urlImage} height='200px' width='200px' alt="Game box art"/>
             <div>{`Released: ${game.releaseDate}`}</div>
-            <div><span>{'Genres: '}</span>{game.genres.map((genre => <Link to={`/genres/${genre.slug}`}>{genre.name + ' '}</Link>))}</div>
+            <div><span>{'Genres: '}</span>{game.genres.map(((genre,idx) => <Link to={`/genres/${genre.slug}`} key={idx}>{genre.name + (idx < game.genres.length -1 ? ', ' : '')}</Link>))}</div>
             <div>{`ESRB Rating: ${game.esrb_rating}`}</div>
             <div>{`User Rating: ${game.user_rating ? game.user_rating : 'N/A'}`}</div>
             <div>{`Metacritic score: ${game.metacritic_rating ? game.metacritic_rating : 'N/A'}`}</div>

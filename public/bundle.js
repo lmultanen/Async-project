@@ -4531,10 +4531,11 @@ var SingleGame = function SingleGame() {
     height: "200px",
     width: "200px",
     alt: "Game box art"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Released: ".concat(game.releaseDate)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, 'Genres: '), game.genres.map(function (genre) {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Released: ".concat(game.releaseDate)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, 'Genres: '), game.genres.map(function (genre, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-      to: "/genres/".concat(genre.slug)
-    }, genre.name + ' ');
+      to: "/genres/".concat(genre.slug),
+      key: idx
+    }, genre.name + (idx < game.genres.length - 1 ? ', ' : ''));
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "ESRB Rating: ".concat(game.esrb_rating)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "User Rating: ".concat(game.user_rating ? game.user_rating : 'N/A')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Metacritic score: ".concat(game.metacritic_rating ? game.metacritic_rating : 'N/A')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Platforms: ".concat(game.platforms.join(', ')))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Loading...");
 };
 
