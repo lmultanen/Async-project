@@ -5,6 +5,9 @@ const Genre = db.define('genre', {
     name: {
         type: Sequelize.STRING,
     },
+    slug: {
+        type: Sequelize.STRING
+    },
     imageUrl: {
         type: Sequelize.STRING
     }

@@ -15,6 +15,22 @@ router.get('/', async(req,res,next) => {
     }
 })
 
+router.get('/:slug', async (req,res,next) => {
+    try {
+        const genre = await Genre.findOne({
+            where: {
+                slug: req.params.slug
+            }, 
+            include: {
+                model: Game
+            }
+        })
+        res.send(genre)
+    } catch (err) {
+        next(err)
+    }
+})
+
 
 
 

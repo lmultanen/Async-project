@@ -18,6 +18,7 @@ const syncAndSeed = async () => {
     await Promise.all(genres.map(genre => {
         return Genre.create({
             name: genre.name,
+            slug: genre.slug,
             imageUrl: genre.image_background
         })
     }))
@@ -105,6 +106,9 @@ module.exports = {
 // build out some basic components to view all genres, all games
 // build out components to view single games, single genres (would essentially filter games down)
 // after that, can build out a 'suggest' component/tab
+// --- will need to figure out how to build list of all platforms to choose from
+// --- either need to make a platform model (might be trickier), or just build an array of platforms when everything first sync'd
+// --- or, make a function that iterates through all games in database and finds all platorms?
 // --- would have a series of questions, filter down all games, and then display games from there
 // then, can look into adding in users/auth functionality with firebase
 // users should have the ability to load their favorites list and be able to comment on specific games
