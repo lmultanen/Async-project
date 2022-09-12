@@ -3,7 +3,8 @@ const axios = require('axios');
 const Game = require('./game');
 const Genre = require('./genre');
 
-Genre.hasMany(Game);
+Genre.hasMany(Game)
+Genre.belongsToMany(Game, {through: 'game_genre'});
 Game.belongsToMany(Genre, { through: 'game_genre'});
 
 const syncAndSeed = async () => {
@@ -16,7 +17,8 @@ const syncAndSeed = async () => {
 
     await Promise.all(genres.map(genre => {
         return Genre.create({
-            name: genre.name
+            name: genre.name,
+            imageUrl: genre.image_background
         })
     }))
 
@@ -39,8 +41,8 @@ const syncAndSeed = async () => {
                     name: genre.name
                 }
             })
-            // await newGame.addGenre(genreModel)
-            await genreModel.addGame(newGame);
+            await newGame.addGenre(genreModel)
+            // await genreModel.addGame(newGame);
         })
     }))
     console.log('db synced!')
@@ -83,6 +85,7 @@ const pullGenres = async () => {
 }
 
 // syncAndSeed()
+// pullGenres()
 
 module.exports = {
     db,
