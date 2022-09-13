@@ -35,3 +35,9 @@ footer {
     text-align: center;
     font-style: italic;
 }
+
+/* Next Prev link styling */
+.disabled {
+    pointer-events: none;
+    color: lightgray;
+}

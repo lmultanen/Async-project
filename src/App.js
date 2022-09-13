@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Routes, Route, NavLink } from "react-router-dom"
 import AllConsoles from "./components/AllConsoles";
 import AllGames from "./components/AllGames";
@@ -8,8 +9,14 @@ import Home from "./components/Home";
 import SingleConsole from "./components/SingleConsole";
 import SingleGame from "./components/SingleGame";
 import SingleGenre from "./components/SingleGenre";
+import { setTotalGameNumber } from "./store/totalGameNumReducer";
 
 function App() {
+  const dispatch = useDispatch()
+  React.useEffect(() => {
+    dispatch(setTotalGameNumber());
+  },[])
+
   return (
     <>
       <nav>
@@ -24,7 +31,7 @@ function App() {
               Home
         </NavLink>
         <NavLink 
-          end to='/games' 
+          end to='/games?page=1' 
           className='menu-link'
           style={({isActive}) => 
             ({color: isActive ? '#3c3c33' : 'white',
@@ -50,7 +57,9 @@ function App() {
       </nav>
       <Routes>
         <Route index element={<Home/>}/>
+        {/* <Route path={'/games?page=1'} element={<AllGames/>}/> */}
         <Route path='/games' element={<AllGames/>}/>
+        {/* <Route path='/games' <Redirect */}
         <Route path='/genres' element={<AllGenres/>}/>
         <Route path='/consoles' element={<AllConsoles/>}/>
         <Route path='/games/:slug' element={<SingleGame/>}/>

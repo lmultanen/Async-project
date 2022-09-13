@@ -24,9 +24,6 @@ const Game = db.define('game', {
     metacritic_rating: {
         type: Sequelize.INTEGER
     },
-    // platforms: {
-    //     type: Sequelize.ARRAY(Sequelize.STRING)
-    // },
     // tags: {
     //     type: Sequelize.ARRAY
     // }

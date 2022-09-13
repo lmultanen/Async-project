@@ -5,6 +5,7 @@ import genresReducer from "./genresReducer";
 import singleConsoleReducer from "./singleConsoleReducer";
 import singleGameReducer from "./singleGameReducer";
 import singleGenreReducer from "./singleGenreReducer";
+import totalGameNumReducer from "./totalGameNumReducer";
 
 const reducer = {
     genres: genresReducer,
@@ -12,7 +13,8 @@ const reducer = {
     consoles: consolesReducer,
     singleGame: singleGameReducer,
     singleGenre: singleGenreReducer,
-    singleConsole: singleConsoleReducer
+    singleConsole: singleConsoleReducer,
+    totalGameNum: totalGameNumReducer
 }
 
 const store = configureStore({reducer})

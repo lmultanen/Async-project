@@ -18,7 +18,7 @@ const AllConsoles = () => {
                 {consoles.map((console,idx) => {
                     return( console.games.length ?
                         <Link to={`/consoles/${console.slug}`} key={idx}>
-                            <li>{console.name}</li>
+                            <li>{console.name + ` (${console.games.length})`}</li>
                         </Link>
                         : <span key={idx}></span>
                     )
