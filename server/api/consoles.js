@@ -1,14 +1,14 @@
-const { Game, Genre, Console } = require('../db');
+const { Console, Game } = require('../db');
 
 const router = require('express').Router();
 
 router.get('/', async(req,res,next) => {
     try {
-        const games = await Game.findAll({
+        const consoles = await Console.findAll({
             order: [["name", "asc"]],
-            include: [{model: Genre},{model: Console}]
-        })
-        res.send(games)
+            include: {model: Game}
+        });
+        res.send(consoles)
     } catch (err) {
         next(err)
     }
@@ -16,19 +16,16 @@ router.get('/', async(req,res,next) => {
 
 router.get('/:slug', async (req,res,next) => {
     try {
-        const game = await Game.findOne({
+        const console = await Console.findOne({
             where: {
                 slug: req.params.slug
-            }, 
-            include: [{model: Genre},{model: Console}]
+            },
+            include: {model: Game}
         })
-        res.send(game)
+        res.send(console);
     } catch (err) {
         next(err)
     }
 })
-
-
-
 
 module.exports = router;

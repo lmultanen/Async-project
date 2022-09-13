@@ -2,10 +2,14 @@ const db = require('./db');
 const axios = require('axios');
 const Game = require('./game');
 const Genre = require('./genre');
+const Console = require('./console')
 
-Genre.hasMany(Game)
+Genre.hasMany(Game);
 Genre.belongsToMany(Game, {through: 'game_genre'});
 Game.belongsToMany(Genre, { through: 'game_genre'});
+Console.hasMany(Game);
+Console.belongsToMany(Game, { through: 'game_console'});
+Game.belongsToMany(Console, { through: 'game_console'});
 
 const syncAndSeed = async () => {
     await db.sync({force: true});
@@ -14,6 +18,8 @@ const syncAndSeed = async () => {
     console.log('games fetched');
     let genres = await pullGenres();
     console.log('genres fetched');
+    let consoles = await pullConsoles();
+    console.log('consoles fetched');
 
     await Promise.all(genres.map(genre => {
         return Genre.create({
@@ -23,13 +29,21 @@ const syncAndSeed = async () => {
         })
     }))
 
+    await Promise.all(consoles.map(console => {
+        return Console.create({
+            name: console.name,
+            slug: console.slug,
+            imageUrl: console.image_background
+        })
+    }))
+
     await Promise.all(games.map(async game => {
-        let platforms = [];
-        game.platforms.forEach(platform => platforms.push(platform.platform.name))
+        // let platforms = [];
+        // game.platforms.forEach(platform => platforms.push(platform.platform.name))
         let newGame = await Game.create({
             name: game.name,
             slug: game.slug,
-            platforms: platforms,
+            // platforms: platforms,
             releaseDate: game.released,
             urlImage: game.background_image,
             user_rating: game.rating,
@@ -43,7 +57,14 @@ const syncAndSeed = async () => {
                 }
             })
             await newGame.addGenre(genreModel)
-            // await genreModel.addGame(newGame);
+        })
+        game.platforms.forEach(async platform => {
+            let consoleModel = await Console.findOne({
+                where: {
+                    name: platform.platform.name
+                }
+            })
+            await newGame.addConsole(consoleModel)
         })
     }))
     console.log('db synced!')
@@ -66,45 +87,44 @@ const pullGames = async () => {
             console.log('fetching page ',page)
             response = await axios.get(`https://api.rawg.io/api/games?dates=2020-01-01,2022-09-09&key=8704d1b9804f464ba902927608a7892e&page=${page}&page_size=40`)
             games = [...games, ...response.data.results];
-            // console.log("total number of games: ", games.length)
         }
     }
     console.log('total number of games: ', games.length)
-    // games.forEach(element => console.log(`Name: ${element.name} Rating: ${element.rating}`))
-    // console.log(games[0])
-    // console.log(games[0].platforms)
     return games;
 }
 
+// so far only seems to be 19 genres; will see if that still holds when pulling more data
 const pullGenres = async () => {
-    // let genres = [];
-    // let page = 1;
     let response = await axios.get('https://api.rawg.io/api/genres?key=8704d1b9804f464ba902927608a7892e');
-    // console.log(response.data.results)
-    // console.log(response.data)
     return response.data.results;
 }
 
+const pullConsoles = async () => {
+    let consoles = [];
+    let page = 1;
+    let response = await axios.get(`https://api.rawg.io/api/platforms?key=8704d1b9804f464ba902927608a7892e&page=${page}`)
+    consoles = [...consoles, ...response.data.results]
+    while (response.data.next) {
+        page++;
+        response = await axios.get(`https://api.rawg.io/api/platforms?key=8704d1b9804f464ba902927608a7892e&page=${page}`)
+        consoles = [...consoles, ...response.data.results]
+    }
+    return consoles;
+}
+
 // syncAndSeed()
-// pullGenres()
+// pullConsoles()
 
 module.exports = {
     db,
     syncAndSeed,
     Game,
-    Genre
+    Genre,
+    Console
 }
 
 // hopefully can move all of this to firebase later to avoid having to repull each time and have a faster launch
 
-// next steps: build models for Genre, Game
-// generate models based on pulled results and seed the database
-// -- built out models and made associations in sync/seed method;
-// -- should look to build out routes now, ideally don't need to re-sync/seed each time going forward
-
-// build out some api routes and stuff to see this information
-// build out some basic components to view all genres, all games
-// build out components to view single games, single genres (would essentially filter games down)
 // after that, can build out a 'suggest' component/tab
 // --- will need to figure out how to build list of all platforms to choose from
 // --- either need to make a platform model (might be trickier), or just build an array of platforms when everything first sync'd
