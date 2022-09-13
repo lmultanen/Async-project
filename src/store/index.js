@@ -5,6 +5,7 @@ import genresReducer from "./genresReducer";
 import singleConsoleReducer from "./singleConsoleReducer";
 import singleGameReducer from "./singleGameReducer";
 import singleGenreReducer from "./singleGenreReducer";
+import suggestedGamesReducer from "./suggestedGamesReducer";
 import totalGameNumReducer from "./totalGameNumReducer";
 
 const reducer = {
@@ -14,9 +15,14 @@ const reducer = {
     singleGame: singleGameReducer,
     singleGenre: singleGenreReducer,
     singleConsole: singleConsoleReducer,
-    totalGameNum: totalGameNumReducer
+    totalGameNum: totalGameNumReducer,
+    suggestedGames: suggestedGamesReducer
 }
 
-const store = configureStore({reducer})
+const store = configureStore({reducer, middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      thunk: true,
+      immutableStateInvariant: false,
+    }),})
 
 export default store;

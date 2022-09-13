@@ -20,7 +20,9 @@ nav {
 }
 
 .menu-link:hover {
-    font-size: 1.75rem;
+    /* font-size: 1.6rem; */
+    font-style: italic;
+    color: rgb(117, 107, 107)
 }
 
 /* Footer */

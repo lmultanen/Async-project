@@ -35,17 +35,10 @@ const AllGames = () => {
 
     return( <div>
         <h3>{`All Games (${totalGameNum})`}</h3>
-        {/* {Number(page) === 1 ?
-            <div>
-                <label htmlFor='search'>Search:</label>
-                <input name='search' value={search} onChange={searchChangeHandler}/>
-            </div>
-            : <></>
-        } */}
         <div>
-                <label htmlFor='search'>Search:</label>
-                <input name='search' value={search} onChange={searchChangeHandler}/>
-            </div>
+            <label htmlFor='search'>Search:</label>
+            <input name='search' value={search} onChange={searchChangeHandler}/>
+        </div>
         
         {games.length ?
         <div id='all-games'>
@@ -62,19 +55,15 @@ const AllGames = () => {
                 })}
             </ol>
             <div className="prev-next">
-                {/* basic logic for now, will want to replace with disabling links instead */}
                 <Link to={`/games?page=${Number(page)-1}`} className={Number(page) === 1 ? 'disabled' : ''} onClick={() => setPage(+page-1)}>Prev</Link>
                 <Link to={`/games?page=${Number(page)+1}`} className={page*20 >= totalGameNum ? 'disabled' : ''} onClick={() => setPage(+page+1)}>Next</Link>
             </div>
         </div>
         : 
-        // <div>Loading...</div>
         !totalGameNum && loaded ? <div>No games to display</div> : <div>Loading...</div>
         }
         </div>
     )
 }
-
-//try to add pagination; will look into sorting alphabetically by default, maybe can look into other sorts later
 
 export default AllGames;

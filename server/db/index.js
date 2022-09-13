@@ -58,14 +58,16 @@ const syncAndSeed = async () => {
             })
             await newGame.addGenre(genreModel)
         })
-        game.platforms.forEach(async platform => {
-            let consoleModel = await Console.findOne({
-                where: {
-                    name: platform.platform.name
-                }
+        if (game.platforms) {
+            game.platforms.forEach(async platform => {
+                let consoleModel = await Console.findOne({
+                    where: {
+                        name: platform.platform.name
+                    }
+                })
+                await newGame.addConsole(consoleModel)
             })
-            await newGame.addConsole(consoleModel)
-        })
+        }
     }))
     console.log('db synced!')
 }
@@ -82,7 +84,7 @@ const pullGames = async () => {
     if (response) {
         games = [...games, ...response.data.results];
         // limiting number pulled here currently
-        while (page < 1) {
+        while (page < 100) {
             page++;
             console.log('fetching page ',page)
             response = await axios.get(`https://api.rawg.io/api/games?dates=2020-01-01,2022-09-09&key=8704d1b9804f464ba902927608a7892e&page=${page}&page_size=40`)

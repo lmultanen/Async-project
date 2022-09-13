@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const SET_GAMES = "SET_GAMES"
-const UNMOUNT_GAMES = 'UNMOUNT_GAMES'
 
 const _setGames = (games) => ({
     type: SET_GAMES,

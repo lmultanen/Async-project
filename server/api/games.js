@@ -18,6 +18,18 @@ router.get('/', async(req,res,next) => {
                 limit: num
             })
             res.send(games)
+        } else if (req.query.console && req.query.genre) {
+            const games = await Game.findAll({
+                include: [{
+                    model: Genre,
+                    where: {name: req.query.genre}
+                }, {
+                    model: Console,
+                    where: {name: req.query.console}
+                }]
+            })
+            console.log(`Total ${req.query.genre} games on ${req.query.console}: ${games.length}`)
+            res.send(games)
         } else {
             const games = await Game.findAll({
                 order: [["name", "asc"]],
