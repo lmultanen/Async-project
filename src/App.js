@@ -13,10 +13,40 @@ function App() {
   return (
     <>
       <nav>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink end to='/games'>Games</NavLink>
-        <NavLink end to='/genres'>Genres</NavLink>
-        <NavLink end to='/consoles'>Consoles</NavLink>
+        {/* should later wrap div here, another div on right side for log in/user menu*/}
+        {/* could probably make this it's own component tbh*/}
+        <NavLink 
+          to='/' 
+          className='menu-link'
+          style={({isActive}) => 
+            ({color: isActive ? '#3c3c33' : 'white',
+            textDecoration: isActive ? 'underline' : 'none'})}>
+              Home
+        </NavLink>
+        <NavLink 
+          end to='/games' 
+          className='menu-link'
+          style={({isActive}) => 
+            ({color: isActive ? '#3c3c33' : 'white',
+            textDecoration: isActive ? 'underline' : 'none'})}>
+              Games
+        </NavLink>
+        <NavLink 
+          end to='/genres' 
+          className='menu-link'
+          style={({isActive}) => 
+            ({color: isActive ? '#3c3c33' : 'white',
+              textDecoration: isActive ? 'underline' : 'none'})}>
+              Genres
+        </NavLink>
+        <NavLink 
+          end to='/consoles' 
+          className='menu-link'
+          style={({isActive}) => 
+            ({color: isActive ? '#3c3c33' : 'white',
+            textDecoration: isActive ? 'underline' : 'none'})}>
+              Consoles
+        </NavLink>
       </nav>
       <Routes>
         <Route index element={<Home/>}/>

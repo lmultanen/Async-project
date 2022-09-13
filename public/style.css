@@ -1,3 +1,37 @@
 * {
     margin: 0;
 }
+
+/* Nav Styling */
+
+nav {
+    align-items: center;
+    background-color: #e26363;
+    color: #3c3c33;
+    display: flex;
+    height: 80px;
+    padding: 10px;
+}
+
+.menu-link {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.menu-link:hover {
+    font-size: 1.75rem;
+}
+
+/* Footer */
+footer {
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    padding: 5px;
+    width: 100%;
+    background-color: lightgray;
+    text-align: center;
+    font-style: italic;
+}

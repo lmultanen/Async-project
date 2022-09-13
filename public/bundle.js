@@ -4332,16 +4332,48 @@ __webpack_require__.r(__webpack_exports__);
 
 function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.NavLink, {
-    to: "/"
+    to: "/",
+    className: "menu-link",
+    style: function style(_ref) {
+      var isActive = _ref.isActive;
+      return {
+        color: isActive ? '#3c3c33' : 'white',
+        textDecoration: isActive ? 'underline' : 'none'
+      };
+    }
   }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.NavLink, {
     end: true,
-    to: "/games"
+    to: "/games",
+    className: "menu-link",
+    style: function style(_ref2) {
+      var isActive = _ref2.isActive;
+      return {
+        color: isActive ? '#3c3c33' : 'white',
+        textDecoration: isActive ? 'underline' : 'none'
+      };
+    }
   }, "Games"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.NavLink, {
     end: true,
-    to: "/genres"
+    to: "/genres",
+    className: "menu-link",
+    style: function style(_ref3) {
+      var isActive = _ref3.isActive;
+      return {
+        color: isActive ? '#3c3c33' : 'white',
+        textDecoration: isActive ? 'underline' : 'none'
+      };
+    }
   }, "Genres"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.NavLink, {
     end: true,
-    to: "/consoles"
+    to: "/consoles",
+    className: "menu-link",
+    style: function style(_ref4) {
+      var isActive = _ref4.isActive;
+      return {
+        color: isActive ? '#3c3c33' : 'white',
+        textDecoration: isActive ? 'underline' : 'none'
+      };
+    }
   }, "Consoles")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     index: true,
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Home__WEBPACK_IMPORTED_MODULE_5__["default"], null)
