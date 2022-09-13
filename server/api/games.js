@@ -1,27 +1,27 @@
+const { Op } = require('sequelize');
 const { Game, Genre, Console } = require('../db');
 
 const router = require('express').Router();
 
 router.get('/', async(req,res,next) => {
     try {
-        // console.log(req.query.page)
         // console.log(req.query)
+        let filterString = req.query.search ? req.query.search.toLowerCase() : '';
         if (req.query.page) {
             // hardcoding number of results for now; could make dynamic later
             let num = 20;
             const games = await Game.findAll({
                 order: [["name","asc"]],
-                // might not even need to include these models in query
+                where: {slug: {[Op.like]: `%${filterString}%`}},
                 include: [{model: Genre}, {model: Console}],
                 offset: (req.query.page-1)*num,
                 limit: num
             })
-            // console.log(req.query.page)
-            // console.log(games)
             res.send(games)
         } else {
             const games = await Game.findAll({
                 order: [["name", "asc"]],
+                where: {slug: {[Op.like]: `%${filterString}%`}},
                 include: [{model: Genre},{model: Console}]
             })
             res.send(games)

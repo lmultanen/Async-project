@@ -14,7 +14,7 @@ import { setTotalGameNumber } from "./store/totalGameNumReducer";
 function App() {
   const dispatch = useDispatch()
   React.useEffect(() => {
-    dispatch(setTotalGameNumber());
+    dispatch(setTotalGameNumber(''));
   },[])
 
   return (

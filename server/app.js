@@ -15,6 +15,7 @@ app.use(volleyball)
 app.use('/api', require('./api'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
+// app.use(express.json())
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'))

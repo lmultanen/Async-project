@@ -9,11 +9,11 @@ const _setGames = (games) => ({
 })
 
 //thunks
-export const fetchGames = (page) => {
+export const fetchGames = (page, search) => {
     return async (dispatch) => {
         // should probably default to page=1 tho; also, later can input search params into the get request
         const address = page ? `/api/games?page=${page}` : '/api/games'
-        const {data: games} = await axios.get(address)
+        const {data: games} = await axios.get(address, {params: {search: search}})
         dispatch(_setGames(games))
     }
 }

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchGames, unmountGames } from "../store/gamesReducer";
 import { Link, useSearchParams } from "react-router-dom";
 import { useState } from "react";
+import { setTotalGameNumber } from "../store/totalGameNumReducer";
 
 const AllGames = () => {
     const dispatch = useDispatch()
@@ -10,25 +11,53 @@ const AllGames = () => {
     const games = useSelector(state => state.games);
     const [page, setPage]  = useState(searchParams.get('page'))
     const totalGameNum = useSelector(state => state.totalGameNum)
+    const [search, setSearch] = useState('')
+    const [loaded, setLoaded] = useState(false)
 
     React.useEffect(() => {
-        dispatch(fetchGames(page));
+        dispatch(fetchGames(page, search));
+        dispatch(setTotalGameNumber(search));
+        setLoaded(true)
         return () => {
             // if implement a search function, may want to re-fetch all games upon dismount
             dispatch(unmountGames())
+            // dispatch(setTotalGameNumber(''))
         }
     },[page])
 
-    return( games.length ?
+    const searchChangeHandler = (event) => {
+        event.preventDefault();
+        setSearch(event.target.value)
+        setPage(1)
+        dispatch(fetchGames(1,event.target.value));
+        dispatch(setTotalGameNumber(event.target.value))
+    }
+
+    return( <div>
+        <h3>{`All Games (${totalGameNum})`}</h3>
+        {/* {Number(page) === 1 ?
+            <div>
+                <label htmlFor='search'>Search:</label>
+                <input name='search' value={search} onChange={searchChangeHandler}/>
+            </div>
+            : <></>
+        } */}
+        <div>
+                <label htmlFor='search'>Search:</label>
+                <input name='search' value={search} onChange={searchChangeHandler}/>
+            </div>
+        
+        {games.length ?
         <div id='all-games'>
-            <h3>All Games</h3>
             {/* using hardcoded 20 results per page */}
             <ol start={page ? (page-1)*20 + 1 : 1}>
                 {games.map((game,idx) => {
                     return(
-                        <Link to={`/games/${game.slug}`} key={idx}>
-                        <li>{game.name}</li>
-                        </Link>
+                        <li key={idx}>
+                            <Link to={`/games/${game.slug}`}>
+                                {game.name}
+                            </Link>
+                        </li>
                     )
                 })}
             </ol>
@@ -38,7 +67,11 @@ const AllGames = () => {
                 <Link to={`/games?page=${Number(page)+1}`} className={page*20 >= totalGameNum ? 'disabled' : ''} onClick={() => setPage(+page+1)}>Next</Link>
             </div>
         </div>
-        : <div>Loading...</div>
+        : 
+        // <div>Loading...</div>
+        !totalGameNum && loaded ? <div>No games to display</div> : <div>Loading...</div>
+        }
+        </div>
     )
 }
 

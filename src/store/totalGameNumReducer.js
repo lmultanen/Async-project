@@ -7,9 +7,9 @@ const _setTotalGameNumber = (number) => ({
     number
 })
 
-export const setTotalGameNumber = () => {
+export const setTotalGameNumber = (search) => {
     return async (dispatch) => {
-        const {data: games} = await axios.get('/api/games');
+        const {data: games} = await axios.get('/api/games', {params: {search: search}});
         dispatch(_setTotalGameNumber(games.length))
     }
 }

@@ -4337,7 +4337,7 @@ __webpack_require__.r(__webpack_exports__);
 function App() {
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
-    dispatch((0,_store_totalGameNumReducer__WEBPACK_IMPORTED_MODULE_10__.setTotalGameNumber)());
+    dispatch((0,_store_totalGameNumReducer__WEBPACK_IMPORTED_MODULE_10__.setTotalGameNumber)(''));
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.NavLink, {
     to: "/",
@@ -4477,7 +4477,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store_gamesReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/gamesReducer */ "./src/store/gamesReducer.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _store_totalGameNumReducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/totalGameNumReducer */ "./src/store/totalGameNumReducer.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -4496,10 +4497,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var AllGames = function AllGames() {
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
 
-  var _useSearchParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useSearchParams)(),
+  var _useSearchParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useSearchParams)(),
       _useSearchParams2 = _slicedToArray(_useSearchParams, 1),
       searchParams = _useSearchParams2[0];
 
@@ -4515,37 +4517,67 @@ var AllGames = function AllGames() {
   var totalGameNum = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
     return state.totalGameNum;
   });
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      search = _useState4[0],
+      setSearch = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      loaded = _useState6[0],
+      setLoaded = _useState6[1];
+
   react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
-    dispatch((0,_store_gamesReducer__WEBPACK_IMPORTED_MODULE_2__.fetchGames)(page));
+    dispatch((0,_store_gamesReducer__WEBPACK_IMPORTED_MODULE_2__.fetchGames)(page, search));
+    dispatch((0,_store_totalGameNumReducer__WEBPACK_IMPORTED_MODULE_3__.setTotalGameNumber)(search));
+    setLoaded(true);
     return function () {
       // if implement a search function, may want to re-fetch all games upon dismount
-      dispatch((0,_store_gamesReducer__WEBPACK_IMPORTED_MODULE_2__.unmountGames)());
+      dispatch((0,_store_gamesReducer__WEBPACK_IMPORTED_MODULE_2__.unmountGames)()); // dispatch(setTotalGameNumber(''))
     };
   }, [page]);
-  return games.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+
+  var searchChangeHandler = function searchChangeHandler(event) {
+    event.preventDefault();
+    setSearch(event.target.value);
+    setPage(1);
+    dispatch((0,_store_gamesReducer__WEBPACK_IMPORTED_MODULE_2__.fetchGames)(1, event.target.value));
+    dispatch((0,_store_totalGameNumReducer__WEBPACK_IMPORTED_MODULE_3__.setTotalGameNumber)(event.target.value));
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "All Games (".concat(totalGameNum, ")")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "search"
+  }, "Search:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    name: "search",
+    value: search,
+    onChange: searchChangeHandler
+  })), games.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "all-games"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "All Games"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ol", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ol", {
     start: page ? (page - 1) * 20 + 1 : 1
   }, games.map(function (game, idx) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-      to: "/games/".concat(game.slug),
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
       key: idx
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, game.name));
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+      to: "/games/".concat(game.slug)
+    }, game.name));
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "prev-next"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
     to: "/games?page=".concat(Number(page) - 1),
     className: Number(page) === 1 ? 'disabled' : '',
     onClick: function onClick() {
       return setPage(+page - 1);
     }
-  }, "Prev"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+  }, "Prev"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
     to: "/games?page=".concat(Number(page) + 1),
     className: page * 20 >= totalGameNum ? 'disabled' : '',
     onClick: function onClick() {
       return setPage(+page + 1);
     }
-  }, "Next"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Loading...");
+  }, "Next"))) : // <div>Loading...</div>
+  !totalGameNum && loaded ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "No games to display") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Loading..."));
 }; //try to add pagination; will look into sorting alphabetically by default, maybe can look into other sorts later
 
 
@@ -4901,7 +4933,7 @@ var _setGames = function _setGames(games) {
 }; //thunks
 
 
-var fetchGames = function fetchGames(page) {
+var fetchGames = function fetchGames(page, search) {
   return /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(dispatch) {
       var address, _yield$axios$get, games;
@@ -4913,7 +4945,11 @@ var fetchGames = function fetchGames(page) {
               // should probably default to page=1 tho; also, later can input search params into the get request
               address = page ? "/api/games?page=".concat(page) : '/api/games';
               _context.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_0___default().get(address);
+              return axios__WEBPACK_IMPORTED_MODULE_0___default().get(address, {
+                params: {
+                  search: search
+                }
+              });
 
             case 3:
               _yield$axios$get = _context.sent;
@@ -5385,7 +5421,7 @@ var _setTotalGameNumber = function _setTotalGameNumber(number) {
   };
 };
 
-var setTotalGameNumber = function setTotalGameNumber() {
+var setTotalGameNumber = function setTotalGameNumber(search) {
   return /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(dispatch) {
       var _yield$axios$get, games;
@@ -5395,7 +5431,11 @@ var setTotalGameNumber = function setTotalGameNumber() {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/games');
+              return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/games', {
+                params: {
+                  search: search
+                }
+              });
 
             case 2:
               _yield$axios$get = _context.sent;
