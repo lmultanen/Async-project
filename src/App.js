@@ -60,7 +60,7 @@ function App() {
               textDecoration: isActive ? 'underline' : 'none'})}>
                 Games
           </NavLink>
-          <NavLink 
+          {/* <NavLink 
             end to='/genres' 
             className='menu-link'
             style={({isActive}) => 
@@ -75,7 +75,8 @@ function App() {
               ({color: isActive ? '#3c3c33' : 'white',
               textDecoration: isActive ? 'underline' : 'none'})}>
                 Consoles
-          </NavLink>
+          </NavLink> */}
+          {/* hiding links to genres, consoles for now since not paginated/formatted well */}
           <NavLink 
             end to='/suggestion' 
             className='menu-link'
