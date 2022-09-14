@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,10 +18,10 @@ const CreateAccountPage = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        dispatch(createUser(form.username, form.password));
-        const token = await user.authenticate({username: form.username, password: form.password});
+        await dispatch(createUser(form.username, form.password));
+        const {data: token} =  await axios.post('/api/auth', {username: form.username, password: form.password})
         window.localStorage.setItem('token',token)
-        dispatch(fetchUserByToken(token));
+        await dispatch(fetchUserByToken(token));
         dispatch(fetchAllUsernames());
         navigate('/accountdetails')
     }

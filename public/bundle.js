@@ -4307,28 +4307,26 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var _components_AccountPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/AccountPage */ "./src/components/AccountPage.js");
-/* harmony import */ var _components_AllConsoles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/AllConsoles */ "./src/components/AllConsoles.js");
-/* harmony import */ var _components_AllGames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/AllGames */ "./src/components/AllGames.js");
-/* harmony import */ var _components_AllGenres__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/AllGenres */ "./src/components/AllGenres.js");
-/* harmony import */ var _components_CreateAccountPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/CreateAccountPage */ "./src/components/CreateAccountPage.js");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Footer */ "./src/components/Footer.js");
-/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/Home */ "./src/components/Home.js");
-/* harmony import */ var _components_SignIn__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/SignIn */ "./src/components/SignIn.js");
-/* harmony import */ var _components_SingleConsole__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/SingleConsole */ "./src/components/SingleConsole.js");
-/* harmony import */ var _components_SingleGame__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/SingleGame */ "./src/components/SingleGame.js");
-/* harmony import */ var _components_SingleGenre__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/SingleGenre */ "./src/components/SingleGenre.js");
-/* harmony import */ var _components_Suggestor__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/Suggestor */ "./src/components/Suggestor.js");
-/* harmony import */ var _store_allUsernamesReducer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./store/allUsernamesReducer */ "./src/store/allUsernamesReducer.js");
-/* harmony import */ var _store_totalGameNumReducer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./store/totalGameNumReducer */ "./src/store/totalGameNumReducer.js");
-/* harmony import */ var _store_userReducer__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./store/userReducer */ "./src/store/userReducer.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _components_AccountPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/AccountPage */ "./src/components/AccountPage.js");
+/* harmony import */ var _components_AllConsoles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/AllConsoles */ "./src/components/AllConsoles.js");
+/* harmony import */ var _components_AllGames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/AllGames */ "./src/components/AllGames.js");
+/* harmony import */ var _components_AllGenres__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/AllGenres */ "./src/components/AllGenres.js");
+/* harmony import */ var _components_CreateAccountPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/CreateAccountPage */ "./src/components/CreateAccountPage.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Footer */ "./src/components/Footer.js");
+/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Home */ "./src/components/Home.js");
+/* harmony import */ var _components_SignIn__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/SignIn */ "./src/components/SignIn.js");
+/* harmony import */ var _components_SingleConsole__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/SingleConsole */ "./src/components/SingleConsole.js");
+/* harmony import */ var _components_SingleGame__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/SingleGame */ "./src/components/SingleGame.js");
+/* harmony import */ var _components_SingleGenre__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/SingleGenre */ "./src/components/SingleGenre.js");
+/* harmony import */ var _components_Suggestor__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/Suggestor */ "./src/components/Suggestor.js");
+/* harmony import */ var _store_allUsernamesReducer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./store/allUsernamesReducer */ "./src/store/allUsernamesReducer.js");
+/* harmony import */ var _store_totalGameNumReducer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./store/totalGameNumReducer */ "./src/store/totalGameNumReducer.js");
+/* harmony import */ var _store_userReducer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./store/userReducer */ "./src/store/userReducer.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator.return && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, catch: function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
@@ -4356,16 +4354,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-
 function App() {
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_18__.useNavigate)();
-  react__WEBPACK_IMPORTED_MODULE_1___default().useEffect(function () {
-    dispatch((0,_store_totalGameNumReducer__WEBPACK_IMPORTED_MODULE_16__.setTotalGameNumber)(''));
-    dispatch((0,_store_allUsernamesReducer__WEBPACK_IMPORTED_MODULE_15__.fetchAllUsernames)());
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_17__.useNavigate)();
+  react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
+    dispatch((0,_store_totalGameNumReducer__WEBPACK_IMPORTED_MODULE_15__.setTotalGameNumber)(''));
+    dispatch((0,_store_allUsernamesReducer__WEBPACK_IMPORTED_MODULE_14__.fetchAllUsernames)());
     attemptTokenLogin();
   }, []);
-  var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
+  var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
     return state.user;
   });
 
@@ -4379,7 +4376,7 @@ function App() {
               token = window.localStorage.getItem('token');
 
               if (token) {
-                dispatch((0,_store_userReducer__WEBPACK_IMPORTED_MODULE_17__.fetchUserByToken)(token));
+                dispatch((0,_store_userReducer__WEBPACK_IMPORTED_MODULE_16__.fetchUserByToken)(token));
               }
 
             case 2:
@@ -4396,14 +4393,14 @@ function App() {
   }();
 
   var logoutClickHandler = function logoutClickHandler() {
-    dispatch((0,_store_userReducer__WEBPACK_IMPORTED_MODULE_17__.logoutUser)());
+    dispatch((0,_store_userReducer__WEBPACK_IMPORTED_MODULE_16__.logoutUser)());
     window.localStorage.setItem('token', '');
     navigate('/');
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("nav", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "menu-links"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.NavLink, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.NavLink, {
     to: "/",
     className: "menu-link",
     style: function style(_ref2) {
@@ -4413,7 +4410,7 @@ function App() {
         textDecoration: isActive ? 'underline' : 'none'
       };
     }
-  }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.NavLink, {
+  }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.NavLink, {
     end: true,
     to: "/games?page=1",
     className: "menu-link",
@@ -4424,7 +4421,7 @@ function App() {
         textDecoration: isActive ? 'underline' : 'none'
       };
     }
-  }, "Games"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.NavLink, {
+  }, "Games"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.NavLink, {
     end: true,
     to: "/genres",
     className: "menu-link",
@@ -4435,7 +4432,7 @@ function App() {
         textDecoration: isActive ? 'underline' : 'none'
       };
     }
-  }, "Genres"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.NavLink, {
+  }, "Genres"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.NavLink, {
     end: true,
     to: "/consoles",
     className: "menu-link",
@@ -4446,7 +4443,7 @@ function App() {
         textDecoration: isActive ? 'underline' : 'none'
       };
     }
-  }, "Consoles"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.NavLink, {
+  }, "Consoles"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.NavLink, {
     end: true,
     to: "/suggestion",
     className: "menu-link",
@@ -4457,43 +4454,43 @@ function App() {
         textDecoration: isActive ? 'underline' : 'none'
       };
     }
-  }, "New Suggestion")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, !user.id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_SignIn__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, "New Suggestion")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, !user.id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_SignIn__WEBPACK_IMPORTED_MODULE_9__["default"], {
     attemptTokenLogin: attemptTokenLogin
-  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, "Welcome back, ", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Link, {
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Welcome back, ", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
     to: "/accountdetails"
-  }, user.username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
+  }, user.username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: logoutClickHandler
-  }, "Logout")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
+  }, "Logout")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
     index: true,
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Home__WEBPACK_IMPORTED_MODULE_9__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Home__WEBPACK_IMPORTED_MODULE_8__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
     path: "/games",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_AllGames__WEBPACK_IMPORTED_MODULE_5__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_AllGames__WEBPACK_IMPORTED_MODULE_4__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
     path: "/genres",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_AllGenres__WEBPACK_IMPORTED_MODULE_6__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_AllGenres__WEBPACK_IMPORTED_MODULE_5__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
     path: "/consoles",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_AllConsoles__WEBPACK_IMPORTED_MODULE_4__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_AllConsoles__WEBPACK_IMPORTED_MODULE_3__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
     path: "/suggestion",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Suggestor__WEBPACK_IMPORTED_MODULE_14__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Suggestor__WEBPACK_IMPORTED_MODULE_13__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
     path: "/games/:slug",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_SingleGame__WEBPACK_IMPORTED_MODULE_12__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_SingleGame__WEBPACK_IMPORTED_MODULE_11__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
     path: "/genres/:slug",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_SingleGenre__WEBPACK_IMPORTED_MODULE_13__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_SingleGenre__WEBPACK_IMPORTED_MODULE_12__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
     path: "/consoles/:slug",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_SingleConsole__WEBPACK_IMPORTED_MODULE_11__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_SingleConsole__WEBPACK_IMPORTED_MODULE_10__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
     path: "/accountdetails",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_AccountPage__WEBPACK_IMPORTED_MODULE_3__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_AccountPage__WEBPACK_IMPORTED_MODULE_2__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
     path: "/createaccount",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_CreateAccountPage__WEBPACK_IMPORTED_MODULE_7__["default"], null)
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("footer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_8__["default"], null)));
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_CreateAccountPage__WEBPACK_IMPORTED_MODULE_6__["default"], null)
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("footer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_7__["default"], null)));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (App); // will want to improve styling of list displays; instead of just names, have boxes with name, rating, icon; hover over to make larger, etc.
@@ -4759,12 +4756,14 @@ var AllGenres = function AllGenres() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _store_allUsernamesReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/allUsernamesReducer */ "./src/store/allUsernamesReducer.js");
-/* harmony import */ var _store_userReducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/userReducer */ "./src/store/userReducer.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _store_allUsernamesReducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/allUsernamesReducer */ "./src/store/allUsernamesReducer.js");
+/* harmony import */ var _store_userReducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/userReducer */ "./src/store/userReducer.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -4798,17 +4797,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var CreateAccountPage = function CreateAccountPage() {
-  var usernames = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
+  var usernames = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
     return state.allUsernames;
   });
-  var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
+  var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
     return state.user;
   });
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)();
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
     username: '',
     password: ''
   }),
@@ -4818,27 +4818,35 @@ var CreateAccountPage = function CreateAccountPage() {
 
   var handleSubmit = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var token;
+      var _yield$axios$post, token;
+
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               event.preventDefault();
-              dispatch((0,_store_userReducer__WEBPACK_IMPORTED_MODULE_3__.createUser)(form.username, form.password));
-              _context.next = 4;
-              return user.authenticate({
+              _context.next = 3;
+              return dispatch((0,_store_userReducer__WEBPACK_IMPORTED_MODULE_4__.createUser)(form.username, form.password));
+
+            case 3:
+              _context.next = 5;
+              return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/auth', {
                 username: form.username,
                 password: form.password
               });
 
-            case 4:
-              token = _context.sent;
+            case 5:
+              _yield$axios$post = _context.sent;
+              token = _yield$axios$post.data;
               window.localStorage.setItem('token', token);
-              dispatch((0,_store_userReducer__WEBPACK_IMPORTED_MODULE_3__.fetchUserByToken)(token));
-              dispatch((0,_store_allUsernamesReducer__WEBPACK_IMPORTED_MODULE_2__.fetchAllUsernames)());
+              _context.next = 10;
+              return dispatch((0,_store_userReducer__WEBPACK_IMPORTED_MODULE_4__.fetchUserByToken)(token));
+
+            case 10:
+              dispatch((0,_store_allUsernamesReducer__WEBPACK_IMPORTED_MODULE_3__.fetchAllUsernames)());
               navigate('/accountdetails');
 
-            case 9:
+            case 12:
             case "end":
               return _context.stop();
           }
@@ -4862,27 +4870,27 @@ var CreateAccountPage = function CreateAccountPage() {
     return !form.username.length || !form.password.length || usernames.includes(form.username.toLowerCase());
   };
 
-  return !user.id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+  return !user.id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("form", {
     id: "new-account-form",
     onSubmit: handleSubmit
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("label", {
     htmlFor: "username"
-  }, "Username ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+  }, "Username ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("span", {
     id: "taken"
-  }, usernames.includes(form.username) ? 'username taken' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  }, usernames.includes(form.username) ? 'username taken' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("input", {
     type: "text",
     value: form.username,
     onChange: handleChange('username')
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("label", {
     htmlFor: "password"
-  }, "Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  }, "Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("input", {
     type: "password",
     value: form.password,
     onChange: handleChange('password')
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
     type: "submit",
     disabled: checkDisabled()
-  }, "Create Account")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "Cannot create account when already logged in");
+  }, "Create Account")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, "Cannot create account when already logged in");
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CreateAccountPage);
