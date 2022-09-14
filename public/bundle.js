@@ -4423,32 +4423,10 @@ function App() {
     }
   }, "Games"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.NavLink, {
     end: true,
-    to: "/genres",
+    to: "/suggestion",
     className: "menu-link",
     style: function style(_ref4) {
       var isActive = _ref4.isActive;
-      return {
-        color: isActive ? '#3c3c33' : 'white',
-        textDecoration: isActive ? 'underline' : 'none'
-      };
-    }
-  }, "Genres"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.NavLink, {
-    end: true,
-    to: "/consoles",
-    className: "menu-link",
-    style: function style(_ref5) {
-      var isActive = _ref5.isActive;
-      return {
-        color: isActive ? '#3c3c33' : 'white',
-        textDecoration: isActive ? 'underline' : 'none'
-      };
-    }
-  }, "Consoles"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.NavLink, {
-    end: true,
-    to: "/suggestion",
-    className: "menu-link",
-    style: function style(_ref6) {
-      var isActive = _ref6.isActive;
       return {
         color: isActive ? '#3c3c33' : 'white',
         textDecoration: isActive ? 'underline' : 'none'
