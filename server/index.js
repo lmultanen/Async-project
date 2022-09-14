@@ -5,6 +5,7 @@ const db = require('./db');
 const init = () => {
     // await db.syncAndSeed();
     // will need to make init async if uncommenting out above line
+    console.log('LOGGING PORT')
     app.listen(port, ()=>console.log(`listening on port ${port}`));
 }
 
