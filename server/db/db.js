@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize');
 
 const config = {
+    dialect: 'postgres',
+    protocol: 'postgres',
     dialectOptions: {
       ssl: {
         require: true,
