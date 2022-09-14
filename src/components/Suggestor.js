@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 import { fetchConsoles } from "../store/consolesReducer";
 import { fetchGenres } from "../store/genresReducer";
 import { fetchSuggestedGames, unmountSuggestedGames } from "../store/suggestedGamesReducer";
+import { addFavoriteGame, removeFavoriteGame } from "../store/userReducer";
 
 const Suggestor = () => {
     // const games = useSelector(state => state.games)
     const consoles = useSelector(state => state.consoles)
     const genres = useSelector(state => state.genres)
+    const user = useSelector(state => state.user)
     const dispatch = useDispatch()
     const [choices, setChoices] = useState({
         console: '<select system>',
@@ -56,6 +58,12 @@ const Suggestor = () => {
             return chosen;
         }
     }
+    const favoriteClickHandler = (game) => {
+        dispatch(addFavoriteGame(user,game))
+    }
+    const unfavoriteClickHandler = (game) => {
+        dispatch(removeFavoriteGame(user,game))
+    }
 
 
     return( genres.length ?
@@ -77,7 +85,12 @@ const Suggestor = () => {
         {fetched ?
             (filterSuggested().length ?
             <ul>
-                {filterSuggested().map((game,idx) => <li key={idx}><Link to={`/games/${game.slug}`}>{game.name}</Link></li>)}
+                {filterSuggested().map((game,idx) => <li className="suggestion" key={idx}><Link to={`/games/${game.slug}`}>{game.name}</Link>
+                                                                                                {/* <span>{user.id ? (!user.games.map(game => game.name).includes(game.name) ?
+                                                                                                    <div className='favorite-link' onClick={() => favoriteClickHandler(game)}>Add to Favorites</div> 
+                                                                                                    : <div className='favorite-link' onClick={() => unfavoriteClickHandler(game)}>Remove from Favorites</div>) : ''}</span> */}
+                                                                                                    <div className="game-suggestion-details">{`ESRB: ${game.esrb_rating}, ` + (game.user_rating/5 < game.metacritic_rating/100 ? `Approval score: ${game.metacritic_rating}%` : `Approval score: ${Math.round(game.user_rating*20)}%`)}</div>
+                                                                                                    </li>)}
             </ul> : <div>Sorry, no games match chosen criteria</div>)
             : <></>
         }

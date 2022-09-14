@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import allUsernamesReducer from "./allUsernamesReducer";
 import consolesReducer from "./consolesReducer";
 import gamesReducer from "./gamesReducer";
 import genresReducer from "./genresReducer";
@@ -7,6 +8,7 @@ import singleGameReducer from "./singleGameReducer";
 import singleGenreReducer from "./singleGenreReducer";
 import suggestedGamesReducer from "./suggestedGamesReducer";
 import totalGameNumReducer from "./totalGameNumReducer";
+import userReducer from "./userReducer";
 
 const reducer = {
     genres: genresReducer,
@@ -16,7 +18,9 @@ const reducer = {
     singleGenre: singleGenreReducer,
     singleConsole: singleConsoleReducer,
     totalGameNum: totalGameNumReducer,
-    suggestedGames: suggestedGamesReducer
+    suggestedGames: suggestedGamesReducer,
+    user: userReducer,
+    allUsernames: allUsernamesReducer
 }
 
 const store = configureStore({reducer, middleware: (getDefaultMiddleware) =>

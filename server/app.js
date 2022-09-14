@@ -11,7 +11,7 @@ app.use(cors())
 app.use(volleyball)
 
 // app.use(bodyParser.urlencoded({extended: false}))
-// app.use(express.json())
+app.use(express.json())
 app.use('/api', require('./api'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())

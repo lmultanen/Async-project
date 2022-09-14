@@ -12,7 +12,7 @@ router.get('/', async(req,res,next) => {
             let num = 20;
             const games = await Game.findAll({
                 order: [["name","asc"]],
-                where: {slug: {[Op.like]: `%${filterString}%`}},
+                where: {name: {[Op.iLike]: `%${filterString}%`}},
                 include: [{model: Genre}, {model: Console}],
                 offset: (req.query.page-1)*num,
                 limit: num
@@ -33,7 +33,7 @@ router.get('/', async(req,res,next) => {
         } else {
             const games = await Game.findAll({
                 order: [["name", "asc"]],
-                where: {slug: {[Op.like]: `%${filterString}%`}},
+                where: {name: {[Op.iLike]: `%${filterString}%`}},
                 include: [{model: Genre},{model: Console}]
             })
             res.send(games)

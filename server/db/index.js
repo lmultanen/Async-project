@@ -3,6 +3,7 @@ const axios = require('axios');
 const Game = require('./game');
 const Genre = require('./genre');
 const Console = require('./console')
+const User = require('./user')
 
 Genre.hasMany(Game);
 Genre.belongsToMany(Game, {through: 'game_genre'});
@@ -10,6 +11,14 @@ Game.belongsToMany(Genre, { through: 'game_genre'});
 Console.hasMany(Game);
 Console.belongsToMany(Game, { through: 'game_console'});
 Game.belongsToMany(Console, { through: 'game_console'});
+
+User.hasMany(Game)
+User.belongsToMany(Game, {through: 'game_user'})
+Game.belongsToMany(User, {through: 'game_user', as: 'favoritedGame'})
+
+// next piece is to add comment functionality
+// will have a comment model; comment belongs to User, User has many comments
+// comment also belongs to game, game has many comments
 
 const syncAndSeed = async () => {
     await db.sync({force: true});
@@ -38,12 +47,9 @@ const syncAndSeed = async () => {
     }))
 
     await Promise.all(games.map(async game => {
-        // let platforms = [];
-        // game.platforms.forEach(platform => platforms.push(platform.platform.name))
         let newGame = await Game.create({
             name: game.name,
             slug: game.slug,
-            // platforms: platforms,
             releaseDate: game.released,
             urlImage: game.background_image,
             user_rating: game.rating,
@@ -69,13 +75,13 @@ const syncAndSeed = async () => {
             })
         }
     }))
+    seedUsers();
     console.log('db synced!')
 }
 
 
 const pullGames = async () => {
     // hardcoding date range for now; would be cool to allow user to customize date range or have it as a preference later
-    // if able to move to firebase later, maybe don't need to have a date range at all? could just be able to use everything
     let games = [];
     let page = 1;
     // hard coding to just 3 months for now; taking too long to fetch everything up to 2 years; ideally only want to fetch once and then generate db
@@ -117,20 +123,31 @@ const pullConsoles = async () => {
 // syncAndSeed()
 // pullConsoles()
 
+const reSyncDb = async () => {
+    await db.sync();
+}
+// reSyncDb();
+
+const seedUsers = async () => {
+    await db.sync();
+    const credentials = [
+        {username: 'luke', password: 'luke_pw'},
+        {username: 'lisa', password: 'lisa_pw'}
+    ]
+    const [luke, lisa] = await Promise.all(
+        credentials.map( credential => User.create(credential))
+    )
+}
+
+// seedUsers()
+
 module.exports = {
     db,
     syncAndSeed,
     Game,
     Genre,
-    Console
+    Console,
+    User
 }
 
-// hopefully can move all of this to firebase later to avoid having to repull each time and have a faster launch
-
-// after that, can build out a 'suggest' component/tab
-// --- will need to figure out how to build list of all platforms to choose from
-// --- either need to make a platform model (might be trickier), or just build an array of platforms when everything first sync'd
-// --- or, make a function that iterates through all games in database and finds all platorms?
-// --- would have a series of questions, filter down all games, and then display games from there
-// then, can look into adding in users/auth functionality with firebase
 // users should have the ability to load their favorites list and be able to comment on specific games

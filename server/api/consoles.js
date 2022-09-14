@@ -1,5 +1,4 @@
 const { Console, Game } = require('../db');
-
 const router = require('express').Router();
 
 router.get('/', async(req,res,next) => {

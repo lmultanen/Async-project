@@ -11,6 +11,7 @@ nav {
     display: flex;
     height: 80px;
     padding: 10px;
+    justify-content: space-between;
 }
 
 .menu-link {
@@ -23,6 +24,29 @@ nav {
     /* font-size: 1.6rem; */
     font-style: italic;
     color: rgb(117, 107, 107)
+}
+
+/* Sign In */
+#sign-in-form {
+    display: flex;
+    flex-direction: column;
+}
+.log-in-line {
+    display: flex;
+    flex-direction: row;
+    margin: .1em;
+    justify-content: space-between;
+}
+.log-in-input {
+    max-width: 100px;
+    min-width: 50px;
+}
+#create-account {
+    color: blue;
+    text-decoration: underline;
+}
+#create-account:hover {
+    color: white;
 }
 
 /* Footer */
@@ -42,4 +66,33 @@ footer {
 .disabled {
     pointer-events: none;
     color: lightgray;
+}
+
+/* Create Account styling */
+#taken {
+    color: white;
+    background-color: orange;
+    margin: 2px;
+}
+
+/* Single Game */
+.favorite-link {
+    text-decoration: underline;
+    color: blue
+}
+.favorite-link:hover {
+    cursor: pointer;
+    color: purple
+}
+
+/* Suggestiong Page */
+/* .suggestion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} */
+.game-suggestion-details {
+    font-style: italic;
+    font-size:small;
+    color: grey
 }
