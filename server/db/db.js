@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 const config = {
     dialect: 'postgres',
-    protocol: 'postgres',
+    logging: false,
     dialectOptions: {
       ssl: {
         require: true,
@@ -11,6 +11,7 @@ const config = {
     }
   }
 
-const db = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:5432/games', { logging: false }, config);
+const db = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:5432/games', config);
+
 
 module.exports = db;
