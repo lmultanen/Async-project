@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run build-watch & npm run start-server ",
     "build-watch": "webpack -w",
-    "start-server": "nodemon --watch server -e js,html server/index.js"
+    "start-server": "nodemon --watch server -e js,html server/index.js",
+    "seed": "node server/db/seed.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
